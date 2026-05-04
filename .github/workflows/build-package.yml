@@ -16,7 +16,7 @@ jobs:
           msystem: MINGW64
           update: true
           install: git p7zip
-          pacboy: toolchain:p cmake:p ninja:p
+          pacboy: toolchain:p cmake:p ninja:p exiv2:p
 
       - uses: actions/checkout@v6
         with: 
