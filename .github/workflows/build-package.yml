@@ -15,7 +15,7 @@ jobs:
         with:
           msystem: MINGW64
           update: true
-          install: git p7zip glib2
+          install: git p7zip
           pacboy: toolchain:p cmake:p ninja:p extra-cmake-modules:p libc++:p libavif:p libheif:p libjxl:p libraw:p
 
       - uses: actions/checkout@v6
