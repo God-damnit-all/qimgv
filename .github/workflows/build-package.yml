@@ -15,7 +15,7 @@ jobs:
         with:
           msystem: MINGW64
           update: true
-          install: git p7zip mingw-w64-x86_64-exiv2
+          install: git p7zip
           pacboy: toolchain:p cmake:p ninja:p extra-cmake-modules:p
 
       - uses: actions/checkout@v6
@@ -29,6 +29,8 @@ jobs:
           export BUILD_NAME="qimgv-x64_$(git describe --tags)"
           echo "build_name=${BUILD_NAME}" >> $GITHUB_OUTPUT
           echo "build_file_name=${BUILD_NAME}.7z" >> $GITHUB_OUTPUT
+          curl -LO https://repo.msys2.org/mingw/mingw64/mingw-w64-x86_64-exiv2-0.27.7-5-any.pkg.tar.zst
+          pacman -U ./mingw-w64-x86_64-exiv2-0.27.7-5-any.pkg.tar.zst
           ./scripts/build-qimgv.sh
           pwd
           ls -al
