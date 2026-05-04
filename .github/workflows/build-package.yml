@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: msys2/setup-msys2@v2
         with:
-          msystem: MINGW64
+          msystem: UCRT64
           update: true
           install: git p7zip
           pacboy: toolchain:p cmake:p ninja:p extra-cmake-modules:p exiv2:p
